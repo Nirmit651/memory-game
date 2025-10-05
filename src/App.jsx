@@ -49,6 +49,8 @@ export default function App() {
           <DotWave size="47" speed="1" color="white" />
           <p className="muted">Loading Pokémon…</p>
         </div>
+
+        <Footer />
       </div>
     );
   }
@@ -63,6 +65,8 @@ export default function App() {
             <button className="btn" onClick={() => handleDifficulty('medium')}>Medium (10)</button>
             <button className="btn" onClick={() => handleDifficulty('hard')}>Hard (15)</button>
           </div>
+
+          <Footer />
         </div>
       </div>
     );
@@ -76,6 +80,8 @@ export default function App() {
           <p className="muted">Best: {bestScore}</p>
           <button className="btn" onClick={resetGame}>Play Again</button>
         </div>
+
+        <Footer />
       </div>
     );
   }
@@ -93,6 +99,9 @@ export default function App() {
           <Card key={i} name={c.name} img={c.img} onClick={() => handleCardClick(c.name)} />
         ))}
       </div>
+
+      <Footer />
+      
     </div>
   );
 
@@ -158,4 +167,28 @@ export default function App() {
     setPickedNames(new Set());
     setStatus('loading');
   }
+
+  function Footer() {
+    return (
+      <footer className="footer">
+        <p>
+          © {new Date().getFullYear()} —{' '}
+          <a
+            href="https://github.com/Nirmit651"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://raw.githubusercontent.com/primer/octicons/main/icons/mark-github-16.svg"
+              alt="GitHub"
+              className="github-logo"
+            />
+            Nirmit651
+          </a>
+        </p>
+      </footer>
+    );
+  }
+
+
 }
